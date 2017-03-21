@@ -50,10 +50,14 @@ RUN wget -nv -O upload/include/i18n/fr.phar http://osticket.com/sites/default/fi
     wget -nv -O upload/include/i18n/it.phar http://osticket.com/sites/default/files/download/lang/it.phar && \
     wget -nv -O upload/include/i18n/es_ES.phar http://osticket.com/sites/default/files/download/lang/es_ES.phar && \
     wget -nv -O upload/include/i18n/de.phar http://osticket.com/sites/default/files/download/lang/de.phar && \
+    wget -nv -O upload/include/i18n/ru.phar http://osticket.com/sites/default/files/download/lang/ru.phar && \
     mv upload/include/i18n upload/include/i18n.dist
 
 # Download LDAP plugin
 RUN wget -nv -O upload/include/plugins/auth-ldap.phar http://osticket.com/sites/default/files/download/plugin/auth-ldap.phar
+
+# Download storage-fs plugin
+RUN wget -nv -O upload/include/plugins/storage-fs.phar http://osticket.com/sites/default/files/download/plugin/storage-fs.phar
 
 # Configure nginx, PHP, msmtp and supervisor
 COPY nginx.conf /etc/nginx/nginx.conf
